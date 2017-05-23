@@ -3,6 +3,9 @@
   font-size: .8em;
 }
 
+.job:hover {
+  background-color: silver;
+}
 .job {
   background-color: #e9e5dc;
   border-radius: 10px;
@@ -14,3 +17,8 @@
 .accomplishments {
   font-size: .8em;
 }
+
+section>h2 {
+  background-color: pink;
+}
+
