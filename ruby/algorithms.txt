@@ -1,0 +1,33 @@
+ELEVATOR ALGORITHM
+
+Know which floor number you intend to visit;
+Enter elevator;
+	Clear doorway;
+	Doors will shut;
+View wall panel with numbers next to elevator door; 
+	Press the button with the number that corresponds with the floor number you wish 	to visit;
+	Button will light up;
+	You will feel elevator move;
+		If not, press button again until it lights up and you feel elevator 			moving;
+You will feel elevator stop;
+	Button light will go off;
+		Confirm it is your number floor light that goes off;
+	Doors will open;
+		Check side of open door where floor number is often written;
+	If all is true, exit elevator.
+	If not, press button and repeat steps from last time you pressed the button.
+
+CROSSWALK WITH CROSSLIGHT ALGORITHM
+
+Wait safely at curb facing other side of street you intend to cross over to;
+Notice the white crosswalk lines painted on the street outlining the path you will take;
+Confirm crosswalk light is red;
+	There is often a secondary light shaped like hand in stop position lit red;
+	If light is not red but green, move ahead one step in process;
+Push button on pole;
+	Button is often yellow;
+Wait for red light to switch to green color;
+	There is often a secondary light shaped like walking person lit white;
+Look left and right to confirm traffic has stopped;
+	If traffic has stopped, proceed with caution to other side of street prior to 		light returning to red color;
+	If not, wait until traffic has stopped and light is green to proceed across.
