@@ -23,7 +23,7 @@ puts "#{name} the hamster with volume level " + vol.to_s + " has #{fur} fur. Rec
 if age.nil?
   puts "#{name}'s age is unknown."
 else
-  puts "#{name} is " + age.to_i + " years old."
+  puts "#{name} is " + "#{age}" + " years old."
 end
 
 
