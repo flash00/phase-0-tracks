@@ -1,0 +1,41 @@
+* {
+  padding: 3px;
+  font-family: Georgia;
+}
+
+a:hover {
+   background-color:yellow;
+}
+
+header {
+  background-color: lightblue;
+  border:1px solid grey;
+}
+
+.column-1 {
+  border:1px solid grey;
+  margin: 3px;
+  display: inline-block;
+  width: 47%;
+  vertical-align: top;
+  background-color: pink;
+}
+
+.column-2 {
+  border:1px solid grey;
+  margin: 3px;
+  display: inline-block;
+  width: 47%;
+  vertical-align: top;
+  background-color: lightgray;
+}
+
+footer {
+  border:1px solid grey;
+  background-color: blanchedalmond;
+  text-align: center;
+  font-style: italic;
+}
+ul {
+  margin-left: 14px;
+}
