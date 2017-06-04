@@ -1,4 +1,11 @@
 #Driver code
+
+puts "How many employees will be processed?"
+ee_num = gets.chomp.to_i
+
+count = 0
+while count < ee_num
+
 # Program to ask new employee:
 #Some known vampires are in the area, and we can check names against the Werewolf Intelligence Bureau database for their aliases.
 
@@ -57,17 +64,18 @@ puts e_insurance
 
 
 #Do the thing
-  if real_age != false && (garlic == true || e_insurance == true)
-    puts "Probably not a vampire."
-  elsif real_age != true && (garlic == false || e_insurance == false)
-    puts "Probably a vampire."
-  elsif real_age != true && garlic == false && e_insurance == false
-    puts "Almost certainly a vampire."
-  elsif
-    name == "Drake Cula" || name == "Tu Fang"
-    puts "Definitely a vampire."
-  else
-    puts "Results inconclusive."
-  end
-
+if real_age != false && (garlic == true || e_insurance == true)
+  puts "Probably not a vampire."
+elsif real_age != true && (garlic == false || e_insurance ==false)
+  puts "Probably a vampire."
+elsif real_age != true && garlic == false && e_insurance == false
+  puts "Almost certainly a vampire."
+elsif
+  name == "Drake Cula" || name == "Tu Fang"
+  puts "Definitely a vampire."
+else
+  puts "Results inconclusive."
+end
+count += 1
+end
 
