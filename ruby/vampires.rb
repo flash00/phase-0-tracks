@@ -1,8 +1,8 @@
 #Driver code
-
+#Process multiple employees
 puts "How many employees will be processed?"
 ee_num = gets.chomp.to_i
-
+#initiating loop to process multi employees. It wraps code
 count = 0
 while count < ee_num
 
@@ -66,7 +66,7 @@ puts e_insurance
 #Do the thing
 if real_age != false && (garlic == true || e_insurance == true)
   puts "Probably not a vampire."
-elsif real_age != true && (garlic == false || e_insurance ==false)
+elsif real_age != true && (garlic == false || e_insurance == false)
   puts "Probably a vampire."
 elsif real_age != true && garlic == false && e_insurance == false
   puts "Almost certainly a vampire."
@@ -76,6 +76,23 @@ elsif
 else
   puts "Results inconclusive."
 end
+
+#check for suspicious allergies
+allergy = ""
+while allergy != "done"
+  puts "Please name any allergy you have, one at a time. Type 'done' when finished."
+  allergy = gets.chomp.to_s
+  if allergy == "sunshine"
+    puts "Probably a vampire."
+    break
+end
+
+#iterating element and closing for loop to process multiple employees
 count += 1
 end
+
+#plot twist
+puts "Actually, never mind! What do these questions have to do with anything? Let's all be friends."
+end
+
 
