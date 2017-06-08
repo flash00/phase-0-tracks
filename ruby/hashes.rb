@@ -1,3 +1,12 @@
+# initialize and manipulate arrays
+
+fruit_items = ["orange", "pineapple", "banana"]
+p fruit_items << "grape"
+p fruit_items[0]
+
+
+#Release 2 Use a Hash in a Program
+
 # # create hash with client name, age, number of children, decor theme, color preferences, dislikes
 
 
@@ -56,3 +65,4 @@ key_update = gets.chomp
 
 # # Print the latest version of the hash, and exit the program.
 p client_info
+
