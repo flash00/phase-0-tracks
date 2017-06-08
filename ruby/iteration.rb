@@ -1,4 +1,4 @@
-# Release 1 parts 1 and 2
+# Release 1 part 1
 
 countries = [
 "China",
@@ -14,29 +14,35 @@ country_capitals = {
   'Nigeria' => 'Abuja'
 }
 
+puts "Release 1 part 2"
 
-puts "Countries: before .each call:"
+puts "countries: before .each call:"
 
-#iterate throuch the array with .each
+#iterate through the array with .each
 countries.each do |country|
   puts country
 end
 
-puts "Countries: after .each call:"
+puts "countries: after .each call:"
 p countries
 
-###############
-
-numbers = [1, 2, 3, 4, 5]
-
-puts "Numbers: before .map! call:"
-
-numbers.map! do |number|
-  puts number * 2
+puts "countries: before .map! call:"
+#iterate through the array with .map!
+countries.map! do |country|
+  puts country
 end
 
-puts "Numbers: after .map! call:"
-p numbers
+puts "countries: after .map! call:"
+p countries
+
+puts "country_capitals: before .each call:"
+#iterate through the hash with .each
+country_capitals.each do |country, capital|
+  puts country_capitals
+end
+
+puts "country_capitals: after .each call:"
+p country_capitals
 
 ##################
 puts "Release 2 part 1 - array"
