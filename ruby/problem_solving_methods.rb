@@ -38,10 +38,8 @@ puts "enter a value... now:"
 response = gets.chomp.to_i #changes input to integer
 search_array(arr, response) #calls method
 
-
-##############################
 # Release 1
-
+##############################
 
 # add the sum of two integers within an array to the previous integer.
 # Push the result into the array
@@ -84,24 +82,31 @@ puts "What's your fib number?"
 number = gets.chomp.to_i
 fib_method(number)
 
-#############################
 #Release 2 part 1
-# Chose Bubble bubble_sort
+#############################
+# Chose Bubble Sort.
+
 #Release 2 part 2
+#I Googled "bubble sort algorithm" and found manh interesting references. After getting a little confused by them I found a youtube video that illustrated the algarithm with a graphic animation and went through the Ruby specific method which was super helpful if I'm ever going to swap again.
+
+#Release 2 part 3
+# Emotionally I was flailing. Working with my partner helped me focus (lucky to have great partner) and later  I found a good reference source and was able to engage my curiosity greatly benefitting my learning process (flailing != learning).
+
+#Release 2 part 4 - pseudocode
+# Create a bubble sort algorithm that accepts an array parameter. It iterates through every item in the array comparing each pair and swapping their places if necessary so the smaller item appears first. It returns a sorted array.
+
+#Release 2 part 5
 
 def bubble_sort(array)
   n = array.length
-
   loop do
-
     swapped = false
-
     (n-1).times do |i|
       if array[i] > array[i+1]
         array[i], array[i+1] = array[i+1], array[i]
         swapped = true
      end
-    end #total numbers array -1 end
+    end
     break if not swapped
   end
     array
