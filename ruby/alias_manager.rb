@@ -1,4 +1,4 @@
-
+# Initial pseudocode:first create user interface because it seems easiest. Then write is_vowel method and test that it works. Create is_consanant method (based on is_vowel). Confirm is_consanant works. Combine is_vowel and is_consant to keep things DRY.
 
 reverse_name = ""
 
@@ -7,15 +7,15 @@ loop do
   puts "Enter a first name to encrypt (or type 'q' for quit):"
   first_name = gets.chomp
   break if first_name == "q"
-  puts "Enter a last name to encrypt (or type 'q' for quit):"
+  puts "Enter a last name to encrypt:"
   last_name = gets.chomp
-  break if last_name == "q"
 
-puts "You entered: #{first_name} #{last_name}"
+puts "You entered: #{first_name} #{last_name}."
+
 
 # Swapping the first and last name.
-reverse_name << last_name + first_name
-puts "This is your name reversed:"
+reverse_name << last_name + " " + first_name
+puts "This is your first and last name swapped:"
 p reverse_name
 
 str = reverse_name.downcase
@@ -40,18 +40,13 @@ def letter_adv(str)
       char
     end
   end
-  str_new.join
+  str_new.join.capitalize
 end
-puts "Here is your encrypted name:"
-p letter_adv(str)
+reverse_name = ""
+print "This is your name encoded: "
+puts letter_adv(str)
+print letter_adv(str)
+puts " is actually #{first_name} #{last_name}."
 end
 
 
-# str_new.join = code_name
-# data = {
-#   "entry1": first_name,
-#   "entry2": last_name,
-#   "entry3": code_name
-# }
-# p data["entry3"]
-#
