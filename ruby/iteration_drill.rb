@@ -98,7 +98,7 @@ end
 puts
 puts "Hash Drills 2"
 
-extinct_animals.each do|animal, year| print "#{animal}-#{year}*" if year < 2000
+extinct_animals.map do|animal, year| print "#{animal}-#{year}*" if year < 2000
 end
 
 # 3. Our calculations were completely off, turns out all of those animals went
@@ -122,7 +122,7 @@ end
 puts
 puts "Hash Drills 4"
 
-extinct_animals.each do|animal, year|
+extinct_animals.each_key do|animal, year|
   case
   when animal == "Andean Cat"
     puts "Andean Cat is extinct."
