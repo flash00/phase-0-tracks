@@ -6,30 +6,33 @@ zombie_apocalypse_supplies = ["hatchet", "rations", "water jug", "binoculars",
 # 1. Iterate through the zombie_apocalypse_supplies array,
 # printing each item in the array separated by an asterisk
 
+puts "Array Drills 1"
+
 zombie_apocalypse_supplies.each {|x| print x, " * "}
 
 # 2. In order to keep yourself organized, sort your zombie_apocalypse_supplies
 # in alphabetical order. Do not use any special built-in methods.
-# ----
+puts
+puts "Array Drills 2"
 
 alphabet = "abcdefghijklmnopqrstuvwxyz"
-def alpha_sort(zombie_apocalypse_supplies)
-  index = 0
-  while index < zombie_apocalypse_supplies.length
-
-    if current_index
-    puts current_index
-index += 1
-
+items = zombie_apocalypse_supplies
+items.each_index do |first|
+  items.each_index do |second|
+    if items[first] < items[second]
+      items[first], items[second] = items[second], items[first]
+    end
   end
-
-  end
+end
+puts items.join(', ')
 
 
 # 3. Create a method to see if a particular item (string) is in the
 # zombie_apocalypse_supplies. Do not use any special built-in methods.
 # For instance: are boots in your list of supplies?
-# ----
+
+puts "Array Drills 3"
+
 puts "Please enter item:"
 item = gets.chomp.to_s
 zombie_apocalypse_supplies.each do|supply|
@@ -45,6 +48,9 @@ end
 # 4. You can't carry too many things, you've only got room in your pack for 5.
 # Remove items in your zombie_apocalypse_supplies in any way you'd like,
 # leaving only 5. Do not use any special built-in methods.
+
+puts "Array Drills 4"
+
 new_supplies = []
 counter = 0
 while counter < 5
@@ -58,6 +64,9 @@ puts new_supplies
 # and their supplies below. You should get rid of any duplicate items.
 # Find the built-in method that helps you accomplish this in the Ruby
 # documentation for Arrays.
+
+puts "Array Drills 5"
+
 other_survivor_supplies = [ "warm clothes", "rations", "compass", "camp stove",
                             "solar battery", "flashlight"]
 
@@ -79,11 +88,15 @@ extinct_animals = {
 # 1. Iterate through extinct_animals hash, printing each key/value pair
 # with a dash in between the key and value, and an asterisk between each pair.
 
+puts "Hash Drills 1"
+
 extinct_animals.each do|animal, year| print "#{animal}-#{year}*"
 end
 
 # 2. Keep only animals in extinct_animals if they were extinct before
 # the year 2000. Do not use any special built-in methods.
+puts
+puts "Hash Drills 2"
 
 extinct_animals.each do|animal, year| print "#{animal}-#{year}*" if year < 2000
 end
@@ -92,9 +105,11 @@ end
 # extinct 3 years before the date provided. Update the values in extinct_animals
 # so they accurately reflect what year the animal went extinct.
 # Do not use any special built-in methods.
+puts
+puts "Hash Drills 3"
 
 extinct_animals.each do|animal, year|
-  year = year + 3
+  year = year - 3
   print "#{animal}-#{year}*"
 end
 
@@ -104,17 +119,27 @@ end
 # "Dodo"
 # "Saiga Antelope"
 # Do not use any special built-in methods.
-def maybe_extinct(animal)
-  extinct_animals.each do|ex_animal|
-  if animal == extinct_animals[index]
-  return true
+puts
+puts "Hash Drills 4"
+
+extinct_animals.each do|animal, year|
+  case
+  when animal == "Andean Cat"
+    puts "Andean Cat is extinct."
+  when animal == "Dodo"
+    puts "Dodo is extinct."
+  when animal == "Saiga Antelope"
+    puts "Saiga Antleope is extinct."
+  else
+    puts "Animal is not extinct."
+  end
 end
-maybe_extinct("Andean Cat")
-maybe_extinct("Dodo")
-maybe_extinct("Saiga Antelope")
 
 # 5. We just found out that the Passenger Pigeon is actually not extinct!
 # Remove them from extinct_animals and return the key value pair as a two item array.
 # Find the built-in method that helps you accomplish this in the Ruby documentation
 # for Hashes.
-# ----
+
+puts "Hash Drills 5"
+
+p extinct_animals.assoc("Passenger Pigeon")
