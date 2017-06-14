@@ -43,8 +43,6 @@ class Automobiles
     puts "initializing new Automobile instance"
   end
 
-
-
   def back_to_the_future(year)
     puts "you drove so fast you're in #{year}"
   end
@@ -54,7 +52,6 @@ class Automobiles
   end
 
 end
-
 
 # camero = Automobiles.new
 # camero.back_to_the_future(1978)
