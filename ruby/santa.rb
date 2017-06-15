@@ -1,12 +1,37 @@
 class Santa
   def initialize(gender, ethnicity)
+    puts "initializing Santa instance..."
     @gender = gender
     @ethnicity = ethnicity
+    @reindeer_ranking = ["Rudolph", "Dasher", "Dancer", "Prancer", "Vixen", "Comet", "Cupid", "Donner", "Blitzen"]
+    @age = 0
   end
 
-@age = 0
+  def gender=(new_gender)
+    @gender = new_gender
+  end
 
-reindeer_ranking = ["Rudolph", "Dasher", "Dancer", "Prancer", "Vixen", "Comet", "Cupid", "Donner", "Blitzen"]
+  def age
+    @age
+  end
+
+  def ethnicity
+    @ethnicity
+  end
+
+  def celebrate_birthday
+    print "Santa is "
+    @age + 1
+  end
+
+  def get_mad_at(name_str)
+    @reindeer_ranking.each do |name|
+      if name_str == name
+        @reindeer_ranking.delete(name)
+        puts @reindeer_ranking.push(name_str)
+      end
+    end
+  end
 
   def speak
     puts "Ho, ho, ho! Haaaappy holidays"
@@ -17,9 +42,20 @@ reindeer_ranking = ["Rudolph", "Dasher", "Dancer", "Prancer", "Vixen", "Comet", 
   end
 end
 
-# charles = Santa.new("unknown", "all")
-# charles.speak
-# charles.eat_milk_and_cookies("snickerdoodle")
+santa1 = Santa.new("unknown", "all")
+santa1.speak
+santa1.eat_milk_and_cookies("snickerdoodle")
+puts santa1.celebrate_birthday
+puts "When Santa gets mad - to back of the pack Vixen."
+santa1.get_mad_at("Vixen")
+puts "Santa's new gender:"
+puts santa1.gender=("transitional")
+puts "Santa's age:"
+puts santa1.age
+puts "Santa's ethnicity:"
+puts santa1.ethnicity
+
+
 
 santas = []
 
@@ -31,4 +67,8 @@ gender_ids.length.times do |i|
   santas << Santa.new(gender_ids[i], ethnicity_ids[i])
 end
 
+puts "Diverse Initializations:"
 print santas
+
+
+
