@@ -4,6 +4,8 @@ class Santa
     @ethnicity = ethnicity
   end
 
+@age = 0
+
 reindeer_ranking = ["Rudolph", "Dasher", "Dancer", "Prancer", "Vixen", "Comet", "Cupid", "Donner", "Blitzen"]
 
   def speak
@@ -15,7 +17,18 @@ reindeer_ranking = ["Rudolph", "Dasher", "Dancer", "Prancer", "Vixen", "Comet", 
   end
 end
 
-charles = Santa.new.age(0)
+# charles = Santa.new("unknown", "all")
+# charles.speak
+# charles.eat_milk_and_cookies("snickerdoodle")
 
-charles.speak
-charles.eat_milk_and_cookies("snickerdoodle")
+santas = []
+
+gender_ids = ["N/A", "transitional", "male-identifying-female", "female-identifying-male", "confused", "non-gendered", "male-identifying-male", "female-identifying-female"]
+
+ethnicity_ids = ["N/A", "black", "latino", "white", "asian" "Legendary Forest Creature (Sasquatch)", "Legendary Ice Creature (Yeti)", "Star Wars Creature (Ewok)"]
+
+gender_ids.length.times do |i|
+  santas << Santa.new(gender_ids[i], ethnicity_ids[i])
+end
+
+print santas
