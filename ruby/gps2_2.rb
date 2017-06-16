@@ -1,11 +1,10 @@
 # Method to create a list
 # input: string of groceries separated by spaces (example: "carrots apples cereal pizza")
 # steps:
-  # create grocery_list hash using hash.new or curly braces
-  # create array and populate with grocery items
-  # iterate through each item
-  # set default quantity using []
-  # print the list to the console [can you use one of your other methods here? - maybe pretty list?]
+  # create a grocery list
+  # create array and fill with grocery items
+  # cycle through each itemusing []
+  # print the list to the console [could maybe use pretty list? method]
 # output: hash
 
 # Method to add an item to a list
@@ -78,9 +77,9 @@ Reflect
 What did you learn about pseudocode from working on this challenge?
 It is not easy to break down the intermediary steps between human understanding of a task and computer understanding of a task. It's both much simpler and much trickier than I assumed prior to this challenge.
 What are the tradeoffs of using arrays and hashes for this challenge?
-The hash is a better fit for the challenge because the key-value pair structure is perfect for housing item-quantity data. If we were only iterating through a list an array would be a better tool.
+The hash is a better fit for the challenge because the key-value pair structure is perfect for housing and accessing tied information like item-quantity data. If we were interested in the order of things in a list an array would be a better tool.
 What does a method return?
-One single object/value.
+The last thing entered is returned by the method. puts and print both output to the console and return nil whereas p will both output and return the value.
 What kind of things can you pass into methods as arguments?
 Any object including another method that corresponds to the values called for in the parameters.
 How can you pass information between methods?
