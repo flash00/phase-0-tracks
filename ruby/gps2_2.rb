@@ -61,11 +61,15 @@ end
 
 list = list_create("carrots apples cereal pizza")
 
-puts add_item(list, "apples", 3)
+p add_item(list, "lemonade", 2)
+p add_item(list, "tomatoes", 3)
+p add_item(list, "onions", 1)
+p add_item(list, "ice cream", 4)
 
-p remove_item(list, "apples")
+p remove_item(list, "lemonade")
 
-p update_item(list, "carrots", 6)
+p update_item(list, "ice cream", 1)
+p update_item(list, "pizza", 3)
 
 pretty_list(list)
 
