@@ -1,11 +1,11 @@
 # Method to create a list
 # input: string of groceries separated by spaces (example: "carrots apples cereal pizza")
 # steps:
-  # create grocery_list hash using hash.new  or curly braces
+  # create grocery_list hash using hash.new or curly braces
   # create array and populate with grocery items
-  # iterate through each item using []
+  # iterate through each item
   # set default quantity using []
-  # print the list to the console [can you use one of your other methods here? - pretty list?]
+  # print the list to the console [can you use one of your other methods here? - maybe pretty list?]
 # output: hash
 
 # Method to add an item to a list
@@ -26,7 +26,7 @@
 
 # Method to print a list and make it look pretty
 # input: hash
-# steps: create descriptive string including data (items and quantity) so it is meaningful for user
+# steps: create descriptive string including data (items and quantity) that is meaningful for user
 # output: Grocery list with items and their quantities
 
 def list_create(groceries)
@@ -59,7 +59,7 @@ def pretty_list(list)
   end
 end
 
-list = list_create("carrots apples cereal pizza")
+list = list_create("broccoli kale strawberries pizza")
 
 p add_item(list, "lemonade", 2)
 p add_item(list, "tomatoes", 3)
