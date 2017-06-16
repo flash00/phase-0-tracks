@@ -29,3 +29,43 @@
 # steps: create descriptive string including data (items and quantity) so it is meaningful for user
 # output: Grocery list with items and their quantities
 
+def list_create(groceries)
+  grocery_list = Hash.new
+  new_list = groceries.split(" ")
+  new_list.each do |grocery|
+    grocery_list[grocery] = 0
+  end
+  p grocery_list
+end
+
+def add_item(list, grocery, quantity= 0)
+  list[grocery] = quantity
+  list
+end
+
+def remove_item(list, item)
+  list.delete(item)
+  list
+end
+
+def update_item(list, item, quantity)
+  list[item] = quantity
+  list
+end
+
+def pretty_list(list)
+  list.each do |item, quantity|
+  p "You have #{quantity} #{item}."
+  end
+end
+
+list = list_create("carrots apples cereal pizza")
+
+puts add_item(list, "apples", 3)
+
+p remove_item(list, "apples")
+
+p update_item(list, "carrots", 6)
+
+pretty_list(list)
+
