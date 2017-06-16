@@ -73,3 +73,18 @@ p update_item(list, "pizza", 3)
 
 pretty_list(list)
 
+=begin
+Reflect
+What did you learn about pseudocode from working on this challenge?
+It is not easy to break down the intermediary steps between human understanding of a task and computer understanding of a task. It's both much simpler and much trickier than I assumed prior to this challenge.
+What are the tradeoffs of using arrays and hashes for this challenge?
+The hash is a better fit for the challenge because the key-value pair structure is perfect for housing item-quantity data. If we were only iterating through a list an array would be a better tool.
+What does a method return?
+One single object/value.
+What kind of things can you pass into methods as arguments?
+Any object including another method that corresponds to the values called for in the parameters.
+How can you pass information between methods?
+By creating a variable of the method call in the driver code and using that variable to pass the information.
+What concepts were solidified in this challenge, and what concepts are still confusing?
+Wow, a lot of concepts were clarified, hope they are solidified (but my braining is still working on them). I'm not sure about which "concepts" aren't clear. It's more the nuts and bolts of breaking down the tasks. I need to keep perfecting that. I also want to improve my variable naming skills to keep them clear. Sometimes I confused myself by naming things too similarly. It seems the more methodical you are the better things go. And being methodical is a skill this challenge clarified.
+=end
