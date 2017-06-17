@@ -49,23 +49,23 @@ puts santa1.ethnicity
 
 santas = []
 
-gender_ids = ["N/A", "transitional", "male-identifying-female", "female-identifying-male", "confused", "non-gendered", "male-identifying-male", "female-identifying-female", "various", "agender", "bigender", "male", "female", "gender fluid"]
+gender_ids = ["androgyne", "N/A", "transitional", "male-identifying-female", "female-identifying-male", "non-gendered", "male-identifying-male", "female-identifying-female", "various", "agender", "bigender", "male", "female", "gender fluid", "opt-out", "genderqueer", "non-binary", "genderbender", "transgender", "pangender"]
 
-ethnicity_ids = ["N/A", "black", "latino", "white", "asian", "Japanese", "Japanese-African", "Legendary Forest Creature (Sasquatch)", "Legendary Ice Creature (Yeti)", "Star Wars Creature (Ewok)", "Sea Creature", "Mermaid", "Selkie", "Unicorn", "Griffin", "Phoenix", "Sphinx", "Magician", "Wizard", "Mage"]
+ethnicity_ids = ["N/A", "black", "latino", "white", "asian", "Japanese", "Japanese-African", "Legendary Forest Creature (Sasquatch)", "Legendary Ice Creature (Yeti)", "Star Wars Creature (Ewok)", "Sea Creature", "Mermaid", "Selkie", "Unicorn", "Griffin", "Phoenix", "Sphinx", "Magician", "Wizard", "Mage", "Pirate", "Unicorn"]
 
-# gender_ids.length.times do |i|
-#   santas << Santa.new(gender_ids[i], ethnicity_ids[i])
-# end
+gender_ids.length.times do |i|
+  santas << Santa.new(gender_ids[i], ethnicity_ids[i])
+end
 
-# puts "Diverse Initializations:"
-# print santas
+puts "Diverse Initializations:"
+print santas
 
 #Many many santas
-def many_santas
-  counter = 0
-  while counter < 1000
-    puts Santa.new(gender_ids[i].sample, ethnicity_ids[i].sample, @age.rand(140)
 
-      counter += 1
-end
-end
+100.times do |santa|
+    p Santa.new(gender_ids.sample, ethnicity_ids.sample)
+    print "Santa's age is "
+    p @age = rand(140).to_s
+  end
+
+
