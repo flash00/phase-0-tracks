@@ -1,6 +1,8 @@
 class Wordgame
   def initialize(str)
     @str = str
+    @guess_count = 0
+    @limit = 0
   end
 
   def get_length(str)
@@ -8,23 +10,32 @@ class Wordgame
   end
 
   def guess_limit(str)
-    @str.length.to_i * 2
+    @limit = @str.length.to_i * 2
   end
 
-  def compare_guess(guess, str)
-    char = 0
-    result = ""
-    while char < @str.length
-      guess.each_char do
-        if guess[char] == @str[char]
-          result << guess[char]
-        else
-          result << "-"
-        end
-      char += 1
-      end
+  def met_limit
+    if @limit == @guess_count
+        print "You cannot defeat Word-Mojo!"
+        return
     end
-    return result
   end
+
+def compare_guess(guess, str)
+  @guess_count = 0
+  index = 0
+  result = ""
+  while index < @str.length
+    guess.each_char do
+      if guess[index] == str[index]
+        result << guess[index]
+      else
+        result << "-"
+      end
+    @guess_count += 1
+    index += 1
+    end
+  end
+  return result
+end
 
 end

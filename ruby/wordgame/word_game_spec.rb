@@ -13,6 +13,11 @@ describe Wordgame do
     expect(word.guess_limit("soda")).to eq 8
   end
 
+  it "compares limit to count and prints message when equal" do
+    word.met_limit
+    expect(word.met_limit).to eq nil
+  end
+
   it "compare guess to wordstring" do
     word.compare_guess("s", "soda")
     expect(word.compare_guess("s", "soda")).to eq "s---"
