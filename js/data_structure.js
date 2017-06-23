@@ -19,3 +19,17 @@ for (var i = 0; i < horseColors.length; i++) {
 };
 
 console.log(horsies);
+
+function Car(color) {
+  this.color = color;
+  this.tireSpeed = Math.round(Math.random() * (60));
+  this.changeTire = function() { console.log("Congratulations, the " + this.color + " car is ready. We changed your tire in  " + this.tireSpeed + " minutes."); };
+};
+
+var firstCar = new Car("blue");
+// console.log(firstCar);
+firstCar.changeTire();
+var secondCar = new Car("red");
+secondCar.changeTire();
+var thirdCar = new Car("green");
+thirdCar.changeTire();
