@@ -1,7 +1,7 @@
 # Virus Predictor
 
 # I worked on this challenge with Hawken Ritter.
-# We spent [2] hours on this challenge.
+# We spent [1] hours on this challenge and I spent an hour solo.
 
 # EXPLANATION OF require_relative
 # It requires an object, such as a hash, from a relative location like another file. It's like copy and pasting the information in the top of the file but cleaner.
@@ -23,6 +23,7 @@ class VirusPredictor
     speed_of_spread
   end
 
+# If you move private above virus_effects you receive a no method error. You would use private when you want to restrict access to certain methods for when a instance method of the class is being executed.
  private
 
  #The method predicted_deaths takes three arguments: population_density, population, and state. Using an if/elsif/else statement it predicts the number of deaths based on density and population from each state.
@@ -99,3 +100,16 @@ end
 
 #=======================================================================
 # Reflection Section
+# What are the differences between the two different hash
+# syntaxes shown in the state_data file?
+# The main hash is using hash literal syntax with a hashrocket, the subhash uses syntax with a colon that appears more like a JavaScript object (cleaner syntax).
+
+# What does require_relative do?
+# It requires an object, such as a hash, from a relative location like another file. It's like copy and pasting the information in the top of the file but cleaner.
+# How is it different from require? It is cleaner syntax then require.
+# What are some ways to iterate through a hash?
+# You can iterate through a hash with .each method or a for loop.
+# When refactoring virus_effects, what stood out to you about the variables, if anything?
+# Because they are instance variables you did not need to include them as parameters - they were understood. Which makes cleaner syntax.
+# What concept did you most solidify in this challenge?
+# There's always more than one way to do something in Ruby.
