@@ -7,7 +7,7 @@ function revString(str){
   for (var i = ltrStr.length -1; i >= 0; i -=1){
     newWord.push(ltrStr[i]);
   }
-    return newWord.join("");
+  return newWord.join("");
 }
 
-console.log(revString("baloon"));
+if (1 == 1){console.log(revString("baloon"))};
