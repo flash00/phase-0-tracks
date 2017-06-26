@@ -25,7 +25,6 @@ function matchObject(object1, object2) {
     if (object1[property] !== object2[property]) {
     return false;
     }
-
 }
     return true;
 }
