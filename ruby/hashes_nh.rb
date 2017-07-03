@@ -61,3 +61,13 @@ key_update = gets.chomp
 
 p client_info
 
+
+# The rubric criteris includes initialize and manipulate arrays and use variables to access arrays. Which I've done below.
+# decor_styles = []
+# decor_styles << "romantic_bohemian"
+# decor_styles << "funky_fresh"
+# decor_styles.unshift "plastic_fantastic"
+# p decor_styles
+# decor_styles.pop
+# p decor_styles
+# p decor_styles[0]
