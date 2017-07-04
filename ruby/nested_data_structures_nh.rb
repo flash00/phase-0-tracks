@@ -40,6 +40,7 @@ p refrigerator[:door][:mid_shelf][1]
 puts "I'm allergic to rasberries. Let's have strawberries instead."
 p refrigerator[:middle_shelf][4] = "strawberries"
 p refrigerator[:middle_shelf]
+
 puts "Hey, we're out of bread!"
 refrigerator[:middle_shelf].push("bread")
 p refrigerator[:middle_shelf]
