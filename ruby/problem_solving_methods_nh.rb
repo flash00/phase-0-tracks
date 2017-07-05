@@ -1,8 +1,8 @@
 def search_array(array, integer)
-  index = 0
-    array.each {|num|
+  new_array = []
+    array.each {|num| new_array << num
       if num == integer
-       p array[index]
+       p new_array.length-1
       end
     }
 end
