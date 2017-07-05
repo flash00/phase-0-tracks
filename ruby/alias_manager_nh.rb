@@ -7,7 +7,7 @@
   entered_names = []
   spy_names = []
 loop do
-  puts "Please enter your first and last name (or enter 'quit' to exit)."
+  puts "Type your first and last name. Then hit enter to continue. Or type 'quit' to exit."
   name_str = gets.chomp
     break if name_str == 'quit'
     entered_names << name_str
@@ -37,7 +37,7 @@ def rotate_letters(str)
     end
   end
     code = code.join.split(" ")
-    p code[0].capitalize + " " + code[1].capitalize
+    code[0].capitalize + " " + code[1].capitalize
 end
 
 spy_name = rotate_letters(reverse_names(name_str))
@@ -47,7 +47,10 @@ puts "Your spy name is #{spy_name}"
 puts
 end
 
-p entered_names + spy_names
+all_names = Hash[entered_names.zip(spy_names)]
+
+all_names.each {|input, encoded| puts "#{encoded} is actually #{input}."}
+
 
 
 
