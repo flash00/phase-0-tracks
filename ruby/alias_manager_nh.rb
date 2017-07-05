@@ -1,13 +1,15 @@
-# write method alias_manager that accepts a string real name and creates a fake name by swapping first and last names and changing all the vowels to the next one in the alphabet and does the same with consonants.
+# write method alias_manager that accepts a string name and changes it to create a fake name by swapping first and last names and rotating all the vowels and consanants to the next vowel or consanant in the alphabet.
 
 #Step 1: reverse the first and last names
-#Step 2: loop through names to find vowels and consanants and rotate alphabetically
+#Step 2: loop through names to find vowels and consanants and rotate letters alphabetically
+#Step 3: create data structure to store encoded names and input names (sounds like a hash because of the paired information).
+#Step 4: create user interface requesting name input and providing encoded output
 
+entered_names = []
+spy_names = []
 
-  entered_names = []
-  spy_names = []
 loop do
-  puts "Type your first and last name. Then hit enter to continue. Or type 'quit' to exit."
+  puts "Type first and last name and hit enter to continue (type 'quit' to exit)."
   name_str = gets.chomp
     break if name_str == 'quit'
     entered_names << name_str
@@ -24,20 +26,20 @@ def rotate_letters(str)
   "s", "t", "v", "w", "x", "y", "z"
   ]
   arr = str.downcase.split('')
-  code = []
+  coded = []
   arr.map do |char|
     if vowels.include?(char)
       new_char = vowels.rotate[vowels.index(char)]
-      code << new_char
+      coded << new_char
     elsif consonants.include?(char)
       new_char = consonants.rotate[consonants.index(char)]
-      code << new_char
+      coded << new_char
     else
-      code << char
+      coded << char
     end
   end
-    code = code.join.split(" ")
-    code[0].capitalize + " " + code[1].capitalize
+    coded = coded.join.split(" ")
+    coded[0].capitalize + " " + coded[1].capitalize
 end
 
 spy_name = rotate_letters(reverse_names(name_str))
