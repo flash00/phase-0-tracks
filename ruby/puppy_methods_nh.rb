@@ -53,14 +53,14 @@ class Swimmer
 
 end
 
-  swim_array = []
-  50.times do |swimmer|
-    swim_array << Swimmer.new
-  end
+swim_array = []
+50.times do |swimmer|
+  swim_array << Swimmer.new
+end
 
 names = ["Bob", "Sandy", "Carol", "Frank"]
-  swim_array.each do |swimmer|
-    swimmer.butterfly(names.sample)
-    swimmer.freestyle(rand(5))
-    swimmer.backstroke(rand(5))
-  end
+swim_array.each do |swimmer|
+  swimmer.butterfly(names.sample)
+  swimmer.freestyle(rand(5))
+  swimmer.backstroke(rand(5))
+end
