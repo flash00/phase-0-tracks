@@ -68,5 +68,5 @@ puts "Build many many santas:"
     Santa.new(genders.sample, ethnicities.sample)
     p "Santa's gender: #{genders.sample} / ethnicity: #{ethnicities.sample}"
     print "Santa's age is "
-    p @age = rand(140)
+    p @age = rand(141)
   end
