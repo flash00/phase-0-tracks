@@ -29,11 +29,8 @@
 
 list = {}
 groceries = "carrots apples cereal pizza"
-def create_list(string, list)
-  items = string.split(" ")
-  items.each do |item|
-    list[item] = 0
-  end
+def create_list(groceries, list)
+  groceries.split(" ").each { |item| list[item] = 0 }
   list
 end
 
@@ -48,14 +45,11 @@ def remove_item(list, item)
 end
 
 def update_quantity(list, item, quantity)
-  list[item] = quantity
-  list
+  add_item(list, item, quantity)
 end
 
 def print_list(list)
-  list.each do |item, quantity|
-    puts "There are #{quantity} #{item} on our list."
-  end
+  list.each { |item, quantity| puts "There are #{quantity} #{item} on our list." }
 end
 
 p create_list(groceries, list)
@@ -63,3 +57,22 @@ p add_item(list, "banana", 3)
 p remove_item(list, "banana")
 p update_quantity(list, "apples", 16)
 print_list(list)
+
+=begin
+REFLECT
+What did you learn about pseudocode from working on this challenge?
+When done correctly, pseudocode can speed up the flow of coding. Including input and output is new for me and was especially helpful.
+
+What are the tradeoffs of using arrays and hashes for this challenge? Arrays are for lists when order is important. A hash is for pairs or linked information. Since the data structure that best fit this challenge was and item tied to a quantity (aka a key value pair), the hash was best.
+
+What does a method return?
+A method returns the last evaluated item - puts and print both output to the console and return nil whereas p will both output and return the value.
+
+What kind of things can you pass into methods as arguments?
+Any object, including another method, as long as it satisfies the values called form in the parameters.
+
+How can you pass information between methods?
+By creating a variable of the method call in the driver code and using that variable to pass the information.
+
+What concepts were solidified in this challenge, and what concepts are still confusing? I need more practice working with hashes and DRYing up my code. Though I have a ways to go, I understand refactoring better.
+=end
