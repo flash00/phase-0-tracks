@@ -26,3 +26,40 @@
 # input: our list with item names and quantities
 # steps: print out a sentence for each item with its quantity
 # output: list of sentences with item name and quantity
+
+list = {}
+groceries = "carrots apples cereal pizza"
+def create_list(string, list)
+  items = string.split(" ")
+  items.each do |item|
+    list[item] = 0
+  end
+  list
+end
+
+def add_item(list, item, quantity= 0)
+  list[item] = quantity
+  list
+end
+
+def remove_item(list, item)
+  list.delete(item)
+  list
+end
+
+def update_quantity(list, item, quantity)
+  list[item] = quantity
+  list
+end
+
+def print_list(list)
+  list.each do |item, quantity|
+    puts "There are #{quantity} #{item} on our list."
+  end
+end
+
+p create_list(groceries, list)
+p add_item(list, "banana", 3)
+p remove_item(list, "banana")
+p update_quantity(list, "apples", 16)
+print_list(list)
