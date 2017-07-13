@@ -2,16 +2,15 @@
 
 class Game
   attr_accessor :guess
-  attr_accessor :str
-  attr_accessor :hint
+  attr_accessor :string
   attr_accessor :word_length
-  def initialize(str)
-    @str = str
+  def initialize(word)
+    @word = word
     @guess = guess
     @guess_count = 0
     @limit = 0
     @result = ""
-    @word_lth = word_length
+    @word_length = word_length
 end
 
 # Step one: compare word and letter
@@ -19,9 +18,9 @@ end
 # Action: compare letter against word
 # Output : string of hyphens the length of word,
 
-  def show_word_length(str)
-    @word_length = @str.length.to_i
-     puts "-" * @word_length
+  def show_word_length
+    @word_length = @word.length.to_i
+     p "-" * @word_length
   end
 
 # Step two: limit guesses
@@ -29,8 +28,8 @@ end
 # Action: compare number of guesses to word length
 # Output: cut off guesses when reach 2 times word length
 
-  def limit_guesses(str)
-    @limit = @str.length.to_i * 2
+  def limit_guesses
+    @limit = @word.length.to_i * 2
   end
 
 # Step three: repeats
@@ -38,10 +37,10 @@ end
 # Action: compare to previous guesses.
 # Output: Do not increment guess count if in previous guesses.
 
-  def repeat_guess(guess, str)
-    if @guess != @str[-1]
-      print "Repeat. Please guess different letter."
-      return
+  def repeat_guess(guess)
+    p @result
+    if @guess != @result[-1]
+      p "Repeat. Please guess different letter."
     end
   end
 
@@ -50,23 +49,18 @@ end
 # Action: print status of guesses
 # Output: string of hyphens the length of word with accurate guesses replacing correlated hyphens
 
-  def compare_guess(guess, str)
-#compare_guess stopped working when user interface added :(
+  def compare_guess(guess)
     @guess_count = 0
-    index = 0
-    @result = ""
-    while index < @str.length
-      @guess.each_char do
-      if @guess[index] == str[index]
-        @result << @guess[index]
+    array = @word.split("")
+    array.each do |letter|
+      if guess == letter
+        @result << guess
       else
         @result << "-"
       end
     @guess_count += 1
-    index += 1
     end
-  end
-  return @result
+  @result
 end
 
 # Step five: message
@@ -74,12 +68,15 @@ end
 # Action: evaluate whether game won or loss
 # Output: congratulatory or taunting message
 
-  def win_game
-    if @result == @str
-      print "You are a Word-Mojo Master!"
+  def win_game(result)
+    if @result == @word
+      p "You are a Word-Mojo Master!"
     else
-      puts "You cannot defete Word_Mojo!"
+      p "Game Over. You cannot defete Word_Mojo!"
     end
   end
 
 end
+
+# test = Game.new("apple")
+# puts test.repeat_guess("a")
