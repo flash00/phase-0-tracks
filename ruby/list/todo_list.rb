@@ -4,17 +4,19 @@ def initialize(items)
 end
 
 def get_items
-  p @items
+  @items
 end
 
 def add_item(item)
   @items << item
-  p @items
 end
 
 def delete_item(item)
   @items.delete(item)
-  p @items
+end
+
+def get_item(num)
+  @items[num]
 end
 
 end
