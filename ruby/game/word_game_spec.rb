@@ -20,6 +20,6 @@ describe Game do
   end
 
   it "prints winning or game over message" do
-    expect(game.win_game("a----")).to eq "Game Over. You cannot defete Word_Mojo!"
+    expect(game.win_game("a----")).to eq "Game Over. You cannot defeat Word_Mojo!"
   end
 end
