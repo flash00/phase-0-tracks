@@ -14,11 +14,11 @@ class Game
   end
 
   def compare_guess(guess)
-      if @word.include?(guess)
-        index_of_letter = @word.index(guess)
-        @result[index_of_letter] = guess
-        puts "Your puzzle now...#{@result}."
-      end
+    if @word.include?(guess)
+      index_of_letter = @word.index(guess)
+      @result[index_of_letter] = guess
+      puts "Your puzzle now...#{@result}."
+    end
   end
 
   def game_over
@@ -33,7 +33,6 @@ class Game
     end
   end
 end
-
 
 # USER INTERFACE
 
