@@ -46,10 +46,10 @@ game = Game.new(word)
 puts "This is the word length: #{game.result}"
 
 game.guess_count.times do
+  break if game.game_over
   puts "Player 2, guess a letter or type 'done' to exit."
   guess = gets.chomp
   break if guess == 'done'
-  break if game.game_over
   game.repeat_guess(guess)
   game.compare_guess(guess)
 end
