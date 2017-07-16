@@ -1,9 +1,8 @@
 class Game
-  attr_reader :result, :word, :completed_guesses, :guess_count
+  attr_reader :result, :word, :guess_count
 
   def initialize(word)
     @word = word
-    @completed_guesses = 0
     @result = "-" * word.length
     @guess_count = word.length * 2
   end
@@ -20,7 +19,6 @@ class Game
         @result[index_of_letter] = guess
         puts "Your puzzle now...#{@result}."
       end
-     @completed_guesses += 1
   end
 
   def game_over
