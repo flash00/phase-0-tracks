@@ -20,7 +20,11 @@ class Game
         @result[index_of_letter] = guess
         puts "Your puzzle now...#{@result}."
       end
-    @completed_guesses += 1
+     @completed_guesses += 1
+  end
+
+  def game_over
+    @result == @word
   end
 
   def win_game
@@ -44,10 +48,12 @@ game = Game.new(word)
 puts "This is the word length: #{game.result}"
 
 game.guess_count.times do
-  puts "Player 2 guess a letter or type 'done' to exit."
+  puts "Player 2, guess a letter or type 'done' to exit."
   guess = gets.chomp
   break if guess == 'done'
+  break if game.game_over
   game.repeat_guess(guess)
+  game.compare_guess(guess)
 end
 
 game.win_game
