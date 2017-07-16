@@ -14,11 +14,11 @@ class Game
   end
 
   def compare_guess(guess)
-      if @word.include?(guess)
-        index_of_letter = @word.index(guess)
-        @result[index_of_letter] = guess
-        puts "Your puzzle now...#{@result}."
-      end
+    if @word.include?(guess)
+      index_of_letter = @word.index(guess)
+      @result[index_of_letter] = guess
+      puts "Your puzzle now...#{@result}."
+    end
   end
 
   def game_over
@@ -34,7 +34,6 @@ class Game
   end
 end
 
-
 # USER INTERFACE
 
 puts "Welcome to Word-Mojo!"
@@ -46,10 +45,10 @@ game = Game.new(word)
 puts "This is the word length: #{game.result}"
 
 game.guess_count.times do
+  break if game.game_over
   puts "Player 2, guess a letter or type 'done' to exit."
   guess = gets.chomp
   break if guess == 'done'
-  break if game.game_over
   game.repeat_guess(guess)
   game.compare_guess(guess)
 end
