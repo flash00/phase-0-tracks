@@ -1,8 +1,11 @@
 // Create function that reverses a string.
 // input - string
 // loop through each letter of the string backwards
-// save each letter to a data structure as you loop
-// output - string with letters reversed
+// starting at end of string
+// save each letter to a variable as you loop
+// return variable
+// output - string variable with letters reversed
+
 var reverseStr = "";
 function reverseString(str){
   for (var i = str.length-1; i >= 0; i -= 1) {
