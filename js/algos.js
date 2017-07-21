@@ -3,15 +3,15 @@ input: ordered list of words as parameter
 write function longestWord which loops through the list comparing the length of each word against the rest in the list until the longest one is found
 output: longest word in list */
 
-function longestWord(wordList) {
-  for (var i = 0; i <= wordList.length; i += 1) {
-    if (wordList[i].length < wordList[i + 1].length) {
-      wordList[i] = wordList[i + 1];
-      if (wordList[wordList.length-1].length > wordList[i].length) {
-        wordList[i] = wordList[wordList.length-1]
+function longestWord(wordArray) {
+  for (var i = 0; i <= wordArray.length; i += 1) {
+    if (wordArray[i].length < wordArray[i + 1].length) {
+      wordArray[i] = wordArray[i + 1];
+        }
+      if (wordArray[wordArray.length-1].length > wordArray[i].length) {
+        wordArray[i] = wordArray[wordArray.length-1]
       }
-    return wordList[i];
-    }
+    return wordArray[i];
   }
 }
 
@@ -47,35 +47,28 @@ set up subloop to create words of random length to add to group
 output: a group of random words with 1-10 letters, the size of the group matches the input number   */
 
 function randomWords(numOfWords) {
-  var wordLength = Math.round(Math.random() * (10))
   var wordList = [];
-  var word = "";
   var letters = "abcdefghijklmnopqrstuvwxyz";
-  for (var i = 1; i < numOfWords; i ++){
-    // for (var j = 0; j <= wordLength; j++){
-    //   letter = Math.round(Math.random() * letters.length);
-    //   word += letters.substring(letter, letter+1);
-    //   wordList.push(word);
-
+  for (var i = 1; i <= numOfWords; i ++) {
+    var word = "";
+    var wordLength = Math.round(Math.random() * 10);
+    for (var j = 0; j <= wordLength; j++){
+      var letter = letters[Math.round(Math.random() * 26).toString()];
+      word += letter;
     }
+  wordList.push(word);
   }
-    return wordList;
+  return wordList;
 }
-
 
 
 // DRIVER CODE
 // **********************************
-// console.log(longestWord(randomWords(1)));
-// console.log(longestWord(randomWords(2)));
-console.log(randomWords(5));
-// console.log(longestWord(randomWords(4)));
-// console.log(longestWord(randomWords(5)));
-// console.log(longestWord(randomWords(6)));
-// console.log(longestWord(randomWords(7)));
-// console.log(longestWord(randomWords(8)));
-// console.log(longestWord(randomWords(9)));
-// console.log(longestWord(randomWords(10)));
+for (var i = 1; i <= 10; i += 1) {
+var wordArray1 = randomWords(4);
+console.log(wordArray1);
+console.log(longestWord(wordArray1));
+}
 
 // **********************************
 // var petsArray = ["kitty", "bunny", "turtle", "slug"]
