@@ -1,64 +1,86 @@
-// create a function longestWord that accepts an array of words, compares the words lengths, and returns the longest word of the array.
+/* PSEUDOCODE
+input: ordered list of words as parameter
+write function longestWord which loops through the list comparing the length of each word against the rest in the list until the longest one is found
+output: longest word in list */
 
-function longestWord(array){
-  var longest = 0;
-  var longestWord = "";
-  for (var i = 0; i < array.length; i++) {
-    if (array[i].length > longest) {
-      longest = array[i].length;
-      longestWord = array[i];
+function longestWord(wordArray) {
+  for (var i = 0; i <= wordArray.length; i += 1) {
+    if (wordArray[i].length < wordArray[i + 1].length) {
+      wordArray[i] = wordArray[i + 1];
+        }
+      if (wordArray[wordArray.length-1].length > wordArray[i].length) {
+        wordArray[i] = wordArray[wordArray.length-1]
       }
+    return wordArray[i];
   }
-  return longestWord;
 }
 
-// Create the function matchObject that compares the data in two separate objects. If after comparing all the pairs in the two objects, at least one pair of data matches, the function will return true. Otherwise the function returns false.
+// ************************************
 
+/* PSEUDOCODE
+input: two separate lists made of key value pairs
+write function "match" which loops through the separate lists comparing the lists' pairs looking for at least one matching key value pair
+output: true or false depending on whether match found */
 
-function matchObject(object1, object2) {
-  for (var property in object1){
-    if (object1[property] !== object2[property]) {
-    return false;
-    }
-  }
-  for (var property in object2){
-    if (object1[property] !== object2[property]) {
-    return false;
-    }
-}
-    return true;
-}
+// function matchObjectPair(object1, object2) {
+//   for (var prop in object1){
+//     if (object1[prop] === object2[prop]) {
+//         return true;
+//       }
+//   }
+//   for (var prop in object2){
+//     if (object1[prop] === object2[prop]) {
+//         return true;
+//       }
+//   }
+//   return false;
+// }
+// ************************************
 
-// Create a function that accepts a number which indicates the number of randomly generated words. The function then generates random words of random lengths from 1 to 10 letters long.
+/* PSEUDOCODE
+input: number representing number of words to create
+write function randomWords
+create an empty structure for the random word and a structure for the group of words
+create an alphabet variable
+set up loop to create group that ends when number reached
+set up subloop to create words of random length to add to group
+output: a group of random words with 1-10 letters, the size of the group matches the input number   */
 
-function randomWords(integer) {
-  var wordsArr = [];
-  var word = "";
+function randomWords(numOfWords) {
+  var wordList = [];
   var letters = "abcdefghijklmnopqrstuvwxyz";
-  for (var i = 1; i <= integer; i ++){
-  for (var j = 0; j < Math.random(1, 11); j++){
-    word = letters.Math.random(1, 11).toString;
-    wordsArr.push(word);
+  for (var i = 1; i <= numOfWords; i ++) {
+    var word = "";
+    var wordLength = Math.round(Math.random() * 10);
+    for (var j = 0; j <= wordLength; j++){
+      var letter = letters[Math.round(Math.random() * 26).toString()];
+      word += letter;
+    }
+  wordList.push(word);
   }
-  }
+  return wordList;
 }
 
 
-// console.log(longestWord(randomWords(3)));
-// console.log(longestWord(randomWords(3)));
-// console.log(longestWord(randomWords(3)));
-// console.log(longestWord(randomWords(3)));
-// console.log(longestWord(randomWords(3)));
-// console.log(longestWord(randomWords(3)));
-// console.log(longestWord(randomWords(3)));
-// console.log(longestWord(randomWords(3)));
-// console.log(longestWord(randomWords(3)));
-// console.log(longestWord(randomWords(3)));
+// DRIVER CODE
+// **********************************
+for (var i = 1; i <= 10; i += 1) {
+var wordArray1 = randomWords(4);
+console.log(wordArray1);
+console.log(longestWord(wordArray1));
+}
 
-// console.log(matchObject ({name: "Steven", age: 54}, {name: "Tamirn", age: 54}));
-// console.log(matchObject ({animal: "dog", legs: 4}, {animal: "dog", legs: 3}))
-
-
-// console.log(longestWord(["fun", "book", "sushi"]));
-// console.log(longestWord(["sparkle", "shine", "glow"]));
-// console.log(longestWord(["dirt", "muck", "grime"]));
+// **********************************
+// var petsArray = ["kitty", "bunny", "turtle", "slug"]
+// var colorsArray = ["blue", "red", "pink", "orange"]
+// var phrasesArray = ["raindrops on roses", "whiskers on kittens", "bright copper kettles", "warm woolen mittens"]
+// console.log(longestWord(colorsArray));
+// console.log(longestWord(petsArray));
+// console.log(longestWord(phrasesArray));
+// **********************************
+// console.log("expect true");
+// console.log(matchObjectPair({name: "Steven", age: 54}, {name: "Tamir", age: 54}));
+// console.log("expect true");
+// console.log(matchObjectPair({animal: "Dog", legs: 4}, {animal: "Dog", legs: 3}));
+// console.log("expect false");
+// console.log(matchObjectPair({name: "Steven", age: 24}, {name: "Tamir", age: 54}));
