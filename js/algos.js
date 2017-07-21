@@ -7,10 +7,10 @@ function longestWord(wordArray) {
   for (var i = 0; i <= wordArray.length; i += 1) {
     if (wordArray[i].length < wordArray[i + 1].length) {
       wordArray[i] = wordArray[i + 1];
-        }
-      if (wordArray[wordArray.length-1].length > wordArray[i].length) {
-        wordArray[i] = wordArray[wordArray.length-1]
-      }
+    }
+    if (wordArray[wordArray.length-1].length > wordArray[i].length) {
+      wordArray[i] = wordArray[wordArray.length-1]
+    }
     return wordArray[i];
   }
 }
@@ -22,19 +22,20 @@ input: two separate lists made of key value pairs
 write function "match" which loops through the separate lists comparing the lists' pairs looking for at least one matching key value pair
 output: true or false depending on whether match found */
 
-// function matchObjectPair(object1, object2) {
-//   for (var prop in object1){
-//     if (object1[prop] === object2[prop]) {
-//         return true;
-//       }
-//   }
-//   for (var prop in object2){
-//     if (object1[prop] === object2[prop]) {
-//         return true;
-//       }
-//   }
-//   return false;
-// }
+function matchObjectPair(object1, object2) {
+  for (var prop in object1){
+    if (object1[prop] === object2[prop]) {
+      return true;
+    }
+  }
+  for (var prop in object2) {
+    if (object1[prop] === object2[prop]) {
+      return true;
+    }
+  }
+  return false;
+}
+
 // ************************************
 
 /* PSEUDOCODE
@@ -61,7 +62,6 @@ function randomWords(numOfWords) {
   return wordList;
 }
 
-
 // DRIVER CODE
 // **********************************
 for (var i = 1; i <= 10; i += 1) {
@@ -69,7 +69,6 @@ var wordArray1 = randomWords(4);
 console.log(wordArray1);
 console.log(longestWord(wordArray1));
 }
-
 // **********************************
 // var petsArray = ["kitty", "bunny", "turtle", "slug"]
 // var colorsArray = ["blue", "red", "pink", "orange"]
