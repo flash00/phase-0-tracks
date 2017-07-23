@@ -1,69 +1,61 @@
 # Virus Predictor
 
-# I worked on this challenge [by myself, with: ].
-# We spent [#] hours on this challenge.
+# I worked on this challenge [with: Simon Brady].
+# We spent [1.5] hours on this challenge.
 
 # EXPLANATION OF require_relative
-# links to file needed
-# require relative is subset of require - allows loading of files
-#
+# require relative is subset of require which links to and loads information from file needed
+
 require_relative 'state_data'
 
 class VirusPredictor
-# initializes a new instance of the class, sets up local/instance variables that are passed in as a parameter
+# initializes a new instance of the class, sets up instance variables which whose values are passed in as parameters
   def initialize(state_of_origin, population_density, population)
     @state = state_of_origin
     @population = population
     @population_density = population_density
   end
-# returns combined virus output (predicted_deaths and speed_of_spread) from two methods
+# virus_effects returns information from two methods (predicted_deaths and speed_of_spread)
   def virus_effects
     predicted_deaths
     speed_of_spread
   end
-
-# makes this next block of code inaccessible for outside objects
+# private makes following code inaccessible for objects outside of class
   private
-# takes in population_density, population, & state, determines appropriate calculation, outputs state death totals
+# predicted_deaths intakes population_density, population, & state, determines appropriate calculation, and outputs state death totals
   def predicted_deaths
     # predicted deaths is solely based on population density
     if @population_density >= 200
-      number_of_deaths = (@population * 0.4).floor
+      multiplier = 0.4
     elsif @population_density >= 150
-      number_of_deaths = (@population * 0.3).floor
+      multiplier = 0.3
     elsif @population_density >= 100
-      number_of_deaths = (@population * 0.2).floor
+      multiplier = 0.2
     elsif @population_density >= 50
-      number_of_deaths = (@population * 0.1).floor
+      multiplier = 0.1
     else
-      number_of_deaths = (@population * 0.05).floor
+      multiplier = 0.05
     end
-
+    number_of_deaths = (@population * multiplier).floor
     print "#{@state} will lose #{number_of_deaths} people in this outbreak"
-
   end
-# takes in population_density, & state, determines appropriate calculation, outputs speed of spread
+# speed_of_spread intakes population_density and state, determines appropriate calculation, and outputs speed of virus spread
   def speed_of_spread #in months
     # We are still perfecting our formula here. The speed is also affected
     # by additional factors we haven't added into this functionality.
-    speed = 0.0
-
     if @population_density >= 200
-      speed += 0.5
+      speed = 0.5
     elsif @population_density >= 150
-      speed += 1
+      speed = 1
     elsif @population_density >= 100
-      speed += 1.5
+      speed = 1.5
     elsif @population_density >= 50
-      speed += 2
+      speed = 2
     else
-      speed += 2.5
+      speed = 2.5
     end
-
     puts " and will spread across the state in #{speed} months.\n\n"
-
   end
-
 end
 
 #=======================================================================
@@ -91,3 +83,4 @@ end
 
 #=======================================================================
 # Reflection Section
+
