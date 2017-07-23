@@ -4,7 +4,8 @@
 # We spent [#] hours on this challenge.
 
 # EXPLANATION OF require_relative
-#
+# links to file needed
+# require relative is subset of require - allows loading of files
 #
 require_relative 'state_data'
 
@@ -17,13 +18,14 @@ class VirusPredictor
   end
 # returns combined virus output (predicted_deaths and speed_of_spread) from two methods
   def virus_effects
-    predicted_deaths(@population_density, @population, @state)
-    speed_of_spread(@population_density, @state)
+    predicted_deaths
+    speed_of_spread
   end
+
 # makes this next block of code inaccessible for outside objects
   private
 # takes in population_density, population, & state, determines appropriate calculation, outputs state death totals
-  def predicted_deaths(population_density, population, state)
+  def predicted_deaths
     # predicted deaths is solely based on population density
     if @population_density >= 200
       number_of_deaths = (@population * 0.4).floor
@@ -41,7 +43,7 @@ class VirusPredictor
 
   end
 # takes in population_density, & state, determines appropriate calculation, outputs speed of spread
-  def speed_of_spread(population_density, state) #in months
+  def speed_of_spread #in months
     # We are still perfecting our formula here. The speed is also affected
     # by additional factors we haven't added into this functionality.
     speed = 0.0
