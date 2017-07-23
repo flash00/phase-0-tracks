@@ -84,3 +84,9 @@ end
 #=======================================================================
 # Reflection Section
 
+# What are the differences between the two different hash syntaxes shown in the state_data file? The first hash syntax uses a hash rocket and the subhash uses a symbol for the key value.
+# What does require_relative do? How is it different from require?
+#   require_relative loads a file by searching relative to the directory in which the file calling it resides. Require also loads a file but you have to add the current directory to the load path. require_relative is more convenient if you are working in a local directory.
+# What are some ways to iterate through a hash? You can iterate through a hash using .each, .each_key, or .each_value.
+# When refactoring virus_effects, what stood out to you about the variables, if anything? They are instance variables and it is not DRY to pass them as parameters because they are accessible to the methods using them without being passed.
+# What concept did you most solidify in this challenge? Refactoring for DRY -that it is often little adjustments and not sweeping changes.
