@@ -1,3 +1,5 @@
+RELEASE 2:
+
 1.Display the information in one table (either table is fine).
 
 sqlite> SELECT * FROM artwork;
@@ -60,3 +62,54 @@ Cupid's Span|Sculpture
 El Capitan|Photography
 Fountain|Sculpture
 The Starry Night|Painting
+
+RELEASE 3:
+
+1.There are lots of different kinds of joins. What are they? 
+Inner Join, Left Join, Right Join, Full Join.
+
+Can you apply different conditions to a join to change what's displayed? Yes.
+
+sqlite> SELECT artwork.name, department.name FROM artwork JOIN department ON artwork.department_id = department.id AND artwork.name="The Starry Night";
+The Starry Night|Painting
+
+Can you bookmark any good diagrams that will help you tell different joins apart in the future? Yes. Say no to Venn diagrams. https://blog.jooq.org/2016/07/05/say-no-to-venn-diagrams-when-explaining-joins/
+
+2.Try a few different joins in your database, and record the commands and the output in queries.txt.
+
+sqlite> SELECT department.name FROM department LEFT JOIN artwork ON department.id = artwork.department_id;
+Painting
+Painting
+Sculpture
+Sculpture
+Photography
+
+
+sqlite> SELECT department.name FROM department INNER JOIN artwork ON department.id = artwork.department_id;
+Painting
+Sculpture
+Photography
+Sculpture
+Painting
+
+sqlite> SELECT date FROM artwork FULL JOIN department ON artwork.department_id=department.id; 
+Error: RIGHT and FULL OUTER JOINs are not currently supported
+
+sqlite> SELECT date FROM artwork RIGHT JOIN department ON artwork.department_id=department.id; 
+Error: RIGHT and FULL OUTER JOINs are not currently supported
+
+sqlite> sqlite> SELECT * FROM artwork INNER JOIN department ON artwork.department_id=department.id;
+1|Mona Lisa|1503|true|1|1|Painting
+2|Cupid's Span|2002|true|2|2|Sculpture
+3|El Capitan|1952|false|3|3|Photography
+5|Fountain|1917|true|2|2|Sculpture
+6|The Starry Night|1889|true|1|1|Painting
+
+sqlite> SELECT * FROM artwork LEFT JOIN department ON artwork.department_id=department.id;
+1|Mona Lisa|1503|true|1|1|Painting
+2|Cupid's Span|2002|true|2|2|Sculpture
+3|El Capitan|1952|false|3|3|Photography
+5|Fountain|1917|true|2|2|Sculpture
+6|The Starry Night|1889|true|1|1|Painting
+
+
