@@ -13,6 +13,7 @@ SQL
 
 db.execute(create_table_cmd)
 
+# *********DATA POPULATING kwazy_pwizes database************
 # db.execute("INSERT INTO kwazy_pwizes (noun, location, celebrity) VALUES ('super power of your choice - try them all', 'Paris the City of Lights', 'George Clooney')")
 # db.execute("INSERT INTO kwazy_pwizes (noun, location, celebrity) VALUES ('key to Santa sleigh to cruise with the reindeer gang', 'Machu Picchu the Incan citadel high in the Andes Mountains', 'Anthony Bourdain')")
 # db.execute("INSERT INTO kwazy_pwizes (noun, location, celebrity) VALUES ('zoo with all of the world’s coolest animals-and they can talk!', 'Bora Bora the French Polynesian wonderland', 'Barack Obama')")
@@ -23,3 +24,23 @@ db.execute(create_table_cmd)
 # db.execute("INSERT INTO kwazy_pwizes (noun, location, celebrity) VALUES ('private tropical island', 'and exhilirating Tokyo Japan', 'Ellen DeGeneres')")
 # db.execute("INSERT INTO kwazy_pwizes (noun, location, celebrity) VALUES ('dream vacation on Mars', 'Kathmandu Nepal the Himalayan jewel', 'Jimmy Fallon')")
 # db.execute("INSERT INTO kwazy_pwizes (noun, location, celebrity) VALUES ('billion dollars', 'Serengeti National Park in Tanzania', 'Elon Musk')")
+
+
+nouns = db.execute("SELECT noun FROM kwazy_pwizes")
+prize = nouns.sample
+locations = db.execute("SELECT location FROM kwazy_pwizes")
+dream_local = locations.sample
+celebrities = db.execute("SELECT celebrity FROM kwazy_pwizes")
+star_power = celebrities.sample
+
+# USER INTERFACE
+
+puts "Welcome to KWAZY PWIZES!"
+puts "Enter '$1' to play. Or type 'done' to exit."
+payment = gets.chomp
+# break if payment == 'done'
+if payment == '$1'
+"\n"
+  puts "CONGRATULATIONS!!!****"
+  puts "You won a #{prize}!" "\n" "You will fly to fabulous #{dream_local}." "\n" "And receive your prize from star celebrity #{star_power}!!" "\n" "Hooray!"
+end
