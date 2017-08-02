@@ -13,6 +13,12 @@ Avoid Captive User Interfaces
 Make Every Program a Filter
 
 In your own words, what is a VPS (virtual private server)?
-Space on a machine that is isolated and acts as if it is a stand alone server. A person would pay a fee to have it hosted by a company.
-What, according to your research, are the advantages of using a VPS? Ease of creation and easy to configure and you don't need to physically store it.
-Optional bonus question: Why is it considered a bad idea to run programs as the root user on a Linux system? Root has administrative access automatically. If you run software with a bug in it as root. The bug could use root's administrative access instead of being limited as a non-administrative user.
+A VPS is space on a machine that is isolated and acts as if it is a stand alone server. You would pay a fee to have it hosted by a company.
+What, according to your research, are the advantages of using a VPS?
+Easy creation and configuration of server and you don't need to physically store it.
+
+Optional bonus question: Why is it considered a bad idea to run programs as the root user on a Linux system?
+
+Root has administrative access automatically. If you run software with a bug in it as root. The bug could use root's administrative access instead of being limited as a non-administrative user.
+
+Using dev tools I explored the DOM of a HTML element (the body of a web page) by changing the background color, attempting to change the font style, clip, colorInterpolation and counterIncrement (which the page would not let me change).
