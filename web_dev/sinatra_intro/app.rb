@@ -79,6 +79,10 @@ get '/students/:id' do
   student.to_s
 end
 
-
+# RESEARCH
+Is Sinatra the only web app library in Ruby? NO. What are some others? Ruby on Rails, Rack, Padrino, Cramp, Cuba, Merb, Camping, Hobo, Ramaze, Espresso, and more.
+Are SQLite and the sqlite3 gem your only options for using a database with Sinatra? NO. What are some others? ActiveRecord, Datamapper, Mongo.
+What is meant by the term web stack?
+A Web stack is the collection of software required for Web development. At a minimum, a Web stack contains an operating system (OS), a programming language, database software and a Web server. LAMP is one commonly used Web stack.
 
 
