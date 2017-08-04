@@ -13,6 +13,16 @@ get '/' do
   erb :home
 end
 
+get '/' do
+  @campuses = db.execute("SELECT distinct(name) FROM campuses")
+  erb :DBC_students
+end
+
+get '/' do
+  @students = db.execute("SELECT * FROM students")
+  erb :DBC_students
+end
+
 get '/students/new' do
   erb :new_student
 end
@@ -21,6 +31,15 @@ end
 # a form
 post '/students' do
   db.execute("INSERT INTO students (name, campus, age) VALUES (?,?,?)", [params['name'], params['campus'], params['age'].to_i])
+  redirect '/'
+end
+
+get '/campuses/new' do
+  erb :new_campus_request
+end
+
+post '/campuses' do
+  db.execute("INSERT INTO campuses (name, nickname) VALUES (?,?)", [params['name'], params['nickname']])
   redirect '/'
 end
 
